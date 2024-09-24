@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.main{
+    width: 800px;
+    height: 500px;
+    border: 2px solid red;
+    margin: 20px auto;
+    position: relative;
+}
+
+.face{
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 2%;
+    left: 36%;
+    background-color: rgb(50, 159, 222);
+}
+
+.innerFace {
+    width: 160px;
+    height: 168px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 20%;
+    left: 9%;
+}
+
+.leftEye{
+    width: 20px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 50%;
+    position: absolute;
+    left: 34%;
+    top: -8%;
+}
+.eyeblack{
+    width: 9px;
+    height: 18px;
+    background-color: rgb(16, 15, 15);
+    border: 1px solid;
+    border-radius: 50%;
+    position: absolute;
+    left: 22%;
+    top: 41%;
+}
+.eyewhite {
+    width: 3px;
+    height: 7px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 50%;
+    position: absolute;
+    left: 24%;
+    top: 43%;
+}
+.rightEye{
+    width: 20px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 50%;
+    position: absolute;
+    left: 47%;
+    top: -8%;
+}
+.noise{
+    width: 20px;
+    height: 20px;
+    border: 1px solid;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 22%;
+    left: 40%;
+}
+.inner{
+    width: 10px;
+    height: 10px;
+    border: 1px solid;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top:5%;
+    left: 5%;
+}

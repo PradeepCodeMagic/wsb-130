@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        body {
+            height: 1200px;
+        }
+
+        .header {
+            width: 100%;
+            padding: 20px 10px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0px;
+            position: relative;
+        }
+
+        .logo {
+            width: 30%;
+
+        }
+
+        .item {
+            width: 40%;
+
+
+        }
+
+        .item ul {
+            display: flex;
+        }
+
+        .item ul li {
+            padding: 0px 10px;
+        }
+
+        .whatsapp {
+            width: 50px;
+            height: 50px;
+            background-color: green;
+            border-radius: 50%;
+            position: fixed;
+            top: 50%;
+            left: 93%;
+        }
+
+        .main {
+            width: 1000px;
+            margin: 20px auto;
+            border: 2px solid red;
+            display: flex;
+            /* position: relative; */
+        }
+
+        .yellow {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: absolute;
+            /* top: 91px;
+            left: 103px; */
+            top: 29%;
+            left: 10%;
+
+        }
+
+        .blue {
+            width: 600px;
+            height: 400px;
+            background-color: blue;
+            margin-left: 200px;
+
+        }
+        .black{
+            width: 80px;
+            height: 80px;
+            background-color: black;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .red{
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+
+
+        .box{
+            width: 300px;
+            height: 400px;
+            background-color: skyblue;
+            position: absolute;
+            top: 100%;
+            left: 75%;
+           opacity: 0;
+           visibility: hidden;
+           transition: 0.5s;
+            
+        }
+        .Profile{
+            
+        }
+
+        .Profile:hover +.box{
+            color: red;
+            opacity: 1;
+            visibility: visible;
+           
+        }
+
+       
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">Logo</div>
+        <div class="item">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Home</li>
+                <li>About</li>
+                <li>Home</li>
+                <li class="Profile" >Profile</li>
+
+                <div class="box">hello</div>
+                
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div class="whatsapp"></div> -->
+
+
+    <!-- <div class="main">
+        <div class="yellow">
+            <div class="black">
+                <div class="red"></div>
+            </div>
+        </div>
+        <div class="blue"></div>
+
+        
+    </div> -->
+</body>
+
+</html>
