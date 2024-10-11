@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .blank{
+            width: 500px;
+            height: auto;
+            padding: 10px;
+            background-color: #9a6363;
+            font-size: 20px;
+            margin: 30px auto;
+        }
+
+        .userData{
+            width: 500px;
+            height: 150px;
+            padding: 10px;
+            background-color: #ccc;
+            font-size: 20px;
+            margin: 30px auto;
+        }
+        .box{
+            width: 400px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <!-- <input type="text" class="userData">
+    <div class="blank"></div>
+    <button onclick="userDataGet()" > click me </button> -->
+
+    <!-- //////////////////////////////////////////////// -->
+
+    <!-- <button ondblclick="userAlert() " onclick="userAlert()" >alert</button> -->
+
+    <div class="box" onmouseenter="userAlert()" ></div>
+    <div class="box" onmouseleave="userAlert()" ></div>
+    
+</body>
+<script>
+    // let userData=document.querySelector(".userData")
+    // let blank=document.querySelector(".blank")
+
+    // let userDataGet=()=>{
+    //     let inputData=userData.value
+
+    //     blank.innerHTML=inputData
+    //     inputData=""
+    // }
+
+    function userAlert(){
+        alert("hello......")
+    }
+
+</script>
+</html>

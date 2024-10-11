@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="userClick()" > click </button>
+</body>
+<script>
+    let userClick=()=>{
+        let red=Math.random()*255
+        let redFinal=Math.round(red)
+
+        let green=Math.random()*255
+        let greenFinal=Math.round(green)
+
+        let blue=Math.random()*255
+        let blueFinal=Math.round(blue)
+
+        document.body.style.backgroundColor=`rgb(${redFinal},${greenFinal},${blueFinal})`
+
+    }
+</script>
+</html>

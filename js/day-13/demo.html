@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            padding: 10px;
+            border: 1px solid;
+        }
+
+        .active{
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+        <div class="box ">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur impedit quas atque nulla voluptate eius! Reprehenderit alias libero quaerat veniam eaque perspiciatis! Veritatis aperiam blanditiis nemo libero quae laudantium quis!
+        </div>
+
+        <button onclick="addFn()" > add </button>
+        <button onclick="removeFn()"> remove </button>
+        <button onclick="toggle()" > toggle </button>
+</body>
+<script>
+
+    let box=document.querySelector('.box')
+
+    function addFn(){
+        box.classList.add("active")  
+    }
+
+    let removeFn=function(){
+        box.classList.remove("active")
+    }
+
+    let toggle=()=>{
+        box.classList.toggle("active")
+    }
+</script>
+
+</html>
