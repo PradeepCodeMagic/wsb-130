@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <div class="main">
+
+            <label for=""> first Date </label>
+            <input type="datetime-local" id="firstDate" />
+
+            <br/>
+
+            <label for=""> Second  Date </label>
+            <input type="datetime-local" id="sectDate"/>
+
+            <br/>
+            <button onclick="calDate()" > click </button>
+
+        </div>
+</body>
+<script>
+
+    
+
+    let calDate=()=>{
+        
+        let firstDate=document.getElementById("firstDate").value
+        let sectDate=document.getElementById("sectDate").value
+
+        let firstDateCurrent=new Date(firstDate)
+        let sectDateCurrent=new Date(sectDate)
+        
+       let diffrence_Date=firstDateCurrent-sectDateCurrent
+       let diffrence_Date_to_second=diffrence_Date/1000
+
+        
+       let oneMint=60
+       let oneHour=60*60
+       let oneDay=24*60*60 //86400 sec.
+
+       let finalDay=Math.round(diffrence_Date_to_second/oneDay)
+       let reminderSec=diffrence_Date_to_second%oneDay
+       let finalHour=Math.round(reminderSec/oneHour)
+
+       console.log(finalDay,finalHour)
+       document.write(`your day is ${finalDay} And your hour is ${finalHour}`)
+       document.write("<br/>")
+
+
+       if(finalDay>0){
+        document.write("This is your next......")
+       }
+       else{
+        document.write("This is your pre......")
+       }
+       
+        
+    }
+    
+
+
+</script>
+</html>
