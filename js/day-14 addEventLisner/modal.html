@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            button{
+                background-color: skyblue;
+                padding: 10px 25px;
+                color: white;
+                font-size: 20px;
+                outline: none;
+                border: none;
+            }
+            .modal{
+                width: 300px;
+                height: 200px;
+                background-color: red;
+                position: absolute;
+                top: -100%;
+                left: 40%;
+                padding: 10px;
+                transition: 1s;
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            .active{
+                top: 30%;
+            }
+            .modal span{
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                background-color: white;
+                border-radius: 50%;
+                padding: 10px;
+                cursor: pointer;
+            }
+            .bg{
+                width: 100vw;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.5);
+                position: fixed;
+                top: 0px;
+                left: 0px;
+                z-index: -99;
+                display: none;
+            }
+    </style>
+</head>
+<body>
+        <button > show modal </button>
+
+        <div class="modal ">
+            <span>X</span>
+           <h2>Enquiry Now</h2>
+        </div>
+
+        <div class="bg"></div>
+</body>
+
+<script>
+    let btn=document.querySelector("button")
+    let myModal=document.querySelector(".modal")
+    let cross=document.querySelector("span")
+    let bg=document.querySelector(".bg")
+
+    btn.addEventListener("click", ()=>{
+      myModal.classList.add("active")
+      bg.style.display="block"
+      btn.innerHTML="hide modal"
+    } )
+
+    cross.addEventListener("click",()=>{
+        myModal.classList.remove("active")
+        bg.style.display="none"
+        btn.innerHTML="show modal"
+    })
+
+    // bg.onclick=()=>{
+    //     alert("hello")
+    // }
+
+    bg.addEventListener("click",()=>{
+        myModal.classList.remove("active")
+        bg.style.display="none"
+        btn.innerHTML="show modal"
+    })
+   
+
+
+
+</script>
+</html>

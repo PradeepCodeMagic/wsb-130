@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+            height: 100vh;
+        }
+
+        .main {
+            width: 800px;
+            margin: auto;
+
+        }
+
+        .row {
+            margin: 10px 0px;
+        }
+
+        .main h3 {
+            background-color: #ccc;
+            padding: 10px;
+            cursor: pointer;
+            margin: 0;
+
+        }
+
+        .main p {
+            padding: 10px;
+            margin: 0;
+            background-color: aquamarine;
+            display: none;
+        }
+
+        .active {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="row">
+            <h3>question 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa laborum deleniti dolorem iste
+                distinctio ea, vitae dolor non quos doloremque itaque id molestiae delectus, voluptatum nulla maiores
+                sit excepturi.</p>
+        </div>
+
+        <div class="row">
+            <h3>question 2</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa laborum deleniti dolorem iste
+                distinctio ea, vitae dolor non quos doloremque itaque id molestiae delectus, voluptatum nulla maiores
+                sit excepturi.</p>
+        </div>
+
+        <div class="row">
+            <h3>question 3</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa laborum deleniti dolorem iste
+                distinctio ea, vitae dolor non quos doloremque itaque id molestiae delectus, voluptatum nulla maiores
+                sit excepturi.</p>
+        </div>
+
+        <div class="row">
+            <h3>question 4</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ipsa laborum deleniti dolorem iste
+                distinctio ea, vitae dolor non quos doloremque itaque id molestiae delectus, voluptatum nulla maiores
+                sit excepturi.</p>
+        </div>
+    </div>
+</body>
+
+<script>
+
+    let all = document.querySelectorAll(".row h3")
+    let allP = document.querySelectorAll(".row p")
+
+    all.forEach((v) => {
+
+        v.addEventListener('click', () => {
+
+            allP.forEach((p) => {
+               p.classList.remove("active")
+            })
+
+            v.nextElementSibling.classList.add("active")
+        })
+    })
+
+
+
+
+
+</script>
+
+</html>
