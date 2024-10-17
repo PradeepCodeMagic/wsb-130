@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="clock">
+		<div id="clockface">
+
+			<div class="hand hour"></div>
+			<div class="hand min"></div>
+			<div class="hand sec"></div>
+
+			<div class="centerpoint"></div>
+				<div class="numbers one">1</div>
+				<div class="numbers two">2</div>
+				<div class="numbers three">3</div>
+				<div class="numbers four">4</div>
+				<div class="numbers five">5</div>
+				<div class="numbers six">6</div>
+				<div class="numbers seven">7</div>
+				<div class="numbers eight">8</div>
+				<div class="numbers nine">9</div>
+				<div class="numbers ten">10</div>
+				<div class="numbers eleven">11</div>
+				<div class="numbers twelve">12</div>	
+
+		</div>
+			
+
+	</div>
+</body>
+<script>
+	let hour=document.querySelector(".hour")
+	let min=document.querySelector(".min")
+	let sec=document.querySelector(".sec")
+
+	let show=setInterval(() => {
+			let currentDate=new Date()
+
+			let mySec=currentDate.getSeconds()*6
+			sec.style.transform=`rotate(${mySec}deg)`
+
+			let myMint=currentDate.getMinutes()*6
+			min.style.transform=`rotate(${myMint}deg)`
+
+			let myHour=currentDate.getHours()*30 + currentDate.getMinutes()*0.5
+			hour.style.transform=`rotate(${myHour}deg)`
+	}, 1000);
+
+
+
+</script>
+</html>

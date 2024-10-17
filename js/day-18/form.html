@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 600px;
+            background-color: #ccc;
+            padding: 10px;
+            margin: auto;
+        }
+        .row{
+            width: 100%;
+            margin: 5px;
+        }
+        .row input{
+            width: 60%;
+            padding: 10px;
+        }
+        button{
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            background-color: skyblue;
+            font-size: 20px;
+        }
+        textarea{
+            width: 60%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h3> User Form </h3>
+        <form  onsubmit="userInfo(event)" >
+            <div class="row">
+                <input type="text" placeholder="enter your name" name="uName" >
+            </div>
+            <div class="row">
+                <input type="text" placeholder="enter your email" name="uEmail" >
+            </div>
+            <div class="row">
+                <input type="text" placeholder="enter your password" name="uPassword" >
+            </div>
+            <div class="row">
+                <textarea placeholder="enter your address" name="uAddress" ></textarea>
+            </div>
+
+            <button >Save</button>
+        </form>
+    </div>
+    
+</body>
+
+<script>
+    let userInfo=(e)=>{
+        e.preventDefault()
+        
+        let userObj={
+            name:e.target.uName.value,
+            email:e.target.uEmail.value,
+            password:e.target.uPassword.value,
+            address:e.target.uAddress.value
+        }
+
+        console.log(userObj)
+    }
+
+</script>
+</html>

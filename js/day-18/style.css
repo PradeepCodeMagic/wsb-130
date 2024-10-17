@@ -1,0 +1,137 @@
+body {
+	width: 99%;
+}
+.clock {
+	width: 400px;
+	margin: 5% auto 0px auto;
+}
+#clockface {
+	position: relative;
+	display: block;
+	width: 340px;
+	height: 340px;
+	background: white;
+	border-radius: 180px;
+	border: 10px solid black;
+	box-shadow: 0 0 3px 0px red;
+}
+.minutes {
+	position: absolute;
+	width: 3px;
+	height: 15px;
+	top: 0px;
+	left: 49.5%;
+	background: grey;
+	transform-origin: 50% 170px;
+}
+.fiveminutes {
+	position: absolute;
+	width: 3px;
+	height: 25px;
+	top: 0px;
+	left: 49.5%;
+	background: black;
+	transform-origin: 50% 170px;
+	z-index: 1;
+}
+.hour {
+	position: absolute;
+	width: 8px;
+	height: 130px;
+	top: 70px;
+	left: 49%;
+	border-radius: 7px;
+	background: black;
+	transform-origin: 49% 100px;
+}
+.min {
+	position: absolute;
+	width: 8px;
+	height: 160px;
+	top: 40px;
+	left: 48.5%;
+	border-radius: 7px;
+	background: black;
+	transform-origin: 48.5% 131px;
+}
+.sec {
+	position: absolute;
+	width: 4px;
+	height: 160px;
+	top: 40px;
+	left: 49%;
+	border-radius: 7px;
+	background: red;
+	transform-origin: 49% 131px;
+}
+.Mili_sec{
+    position: absolute;
+	width: 2px;
+	height: 120px;
+	top: 40px;
+	left: 49%;
+	border-radius: 7px;
+	background: rgb(31, 4, 165);
+	transform-origin: 49% 131px;
+}
+.centerpoint {
+	width: 24px;
+	height: 24px;
+	border-radius: 12px;
+	background-color: black;
+	position: absolute;
+	left: 158px;
+	top: 158px;
+}
+.numbers {
+	position: absolute;
+	font-size: 30px;
+}
+.one {
+	top: 40px;
+	left: 225px;
+}
+.two {
+	top: 85px;
+	left: 275px;
+}
+.three {
+	top: 155px;
+	left: 295px;
+}
+.four {
+	top: 220px;
+	left: 275px;
+}
+.five {
+	top: 265px;
+	left: 230px;
+}
+.six {
+	top: 280px;
+	left: 160px;
+}
+.seven {
+	top: 265px;
+	left: 95px;
+}
+.eight {
+	top: 220px;
+	left: 50px;
+}
+.nine {
+	top: 155px;
+	left: 30px;
+}
+.ten {
+	top: 85px;
+	left: 45px;
+}
+.eleven {
+	top: 40px;
+	left: 100px;
+}
+.twelve {
+	top: 25px;
+	left: 155px;
+}
