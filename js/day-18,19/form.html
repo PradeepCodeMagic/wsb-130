@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 600px;
+            background-color: #ccc;
+            padding: 10px;
+            margin: auto;
+        }
+
+        .row {
+            width: 100%;
+            margin: 5px;
+        }
+
+        .row input {
+            width: 80%;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            background-color: skyblue;
+            font-size: 20px;
+        }
+
+        textarea {
+            width: 80%;
+            padding: 10px;
+        }
+
+        .display {
+            width: 1000px;
+            
+            padding: 10px;
+            margin: auto;
+        }
+        table{
+            color: rgb(11, 11, 11);
+            font-size: 22px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h3> User Form </h3>
+        <form onsubmit="userInfo(event)">
+            <div class="row">
+                <input type="text" placeholder="enter your name" name="uName">
+            </div>
+            <div class="row">
+                <input type="text" placeholder="enter your email" name="uEmail">
+            </div>
+            <div class="row">
+                <input type="text" placeholder="enter your password" name="uPassword">
+            </div>
+            <div class="row">
+                <textarea placeholder="enter your address" name="uAddress"></textarea>
+            </div>
+
+            <button>Save</button>
+        </form>
+    </div>
+
+    <div class="display">
+        <table border="2" width="100%">
+            <thead  bgcolor="red"   >
+                <td>Sr.</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>password</td>
+                <td>Address</td>
+                <td> <button> Delete All </button> </td>
+            </thead>
+
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Pradeep</td>
+                    <td>xyz@gmail.com</td>
+                    <td>123@!@#$%^</td>
+                    <td>jodhpur</td>
+                    <td> <button> Delete </button> </td>
+                </tr> -->
+
+               
+            </tbody>
+
+        </table>
+    </div>
+
+</body>
+
+<script>
+    let userInfo = (e) => {
+        e.preventDefault()
+
+        let userObj = {
+            name: e.target.uName.value,
+            email: e.target.uEmail.value,
+            password: e.target.uPassword.value,
+            address: e.target.uAddress.value
+        }
+
+        let oldData = JSON.parse(localStorage.getItem("userForm")) ?? []
+        let allData = [...oldData, userObj]
+        localStorage.setItem("userForm", JSON.stringify(allData))
+
+        e.target.reset()
+
+        displayData()
+    }
+
+    // displat Data
+    let displayData=()=>{
+        let tbody=document.querySelector("tbody")
+       let localData=JSON.parse(localStorage.getItem("userForm")) ?? []
+
+       tbody.innerHTML=''
+       localData.map((v,i)=>{
+        tbody.innerHTML += `
+                <tr>
+                    <td> ${i+1} </td>
+                    <td> ${v.name} </td>
+                    <td> ${v.email} </td>
+                    <td>${v.password}</td>
+                    <td>${v.address}</td>
+                    <td> <button> Delete </button> </td>
+                </tr>
+        `
+       })
+      
+    }
+
+    displayData()
+
+</script>
+
+</html>
