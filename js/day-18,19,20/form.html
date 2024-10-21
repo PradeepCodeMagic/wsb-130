@@ -47,6 +47,9 @@
             font-size: 22px;
             text-align: center;
         }
+        h4{
+            color: red;
+        }
     </style>
 </head>
 
@@ -55,13 +58,15 @@
         <h3> User Form </h3>
         <form onsubmit="userInfo(event)">
             <div class="row">
-                <input type="text" placeholder="enter your name" name="uName">
+                <input type="text" placeholder="enter your name"  name="uName">
+                <h4 id="nameError"></h4>
             </div>
             <div class="row">
                 <input type="text" placeholder="enter your email" name="uEmail">
             </div>
             <div class="row">
-                <input type="text" placeholder="enter your password" name="uPassword">
+                <input type="text" placeholder="enter your password"  name="uPassword">
+                <h4 id="passwordError"></h4>
             </div>
             <div class="row">
                 <textarea placeholder="enter your address" name="uAddress"></textarea>
@@ -79,7 +84,7 @@
                 <td>Email</td>
                 <td>password</td>
                 <td>Address</td>
-                <td> <button> Delete All </button> </td>
+                <td> <button onclick="deleteAll()" > Delete All </button> </td>
             </thead>
 
             <tbody>
@@ -101,6 +106,15 @@
 </body>
 
 <script>
+    let namePattern=/^[A-Za-z]+$/
+    let passwordPattern=/^[A-Za-z0-9]{3,8}$/
+
+    // let emailPattern=new RegExp("[A-Za-z]")
+
+    let nameError=document.querySelector("#nameError")
+    let passwordError=document.querySelector("#passwordError")
+
+
     let userInfo = (e) => {
         e.preventDefault()
 
@@ -110,6 +124,18 @@
             password: e.target.uPassword.value,
             address: e.target.uAddress.value
         }
+
+        if(!namePattern.test(userObj.name)){
+            nameError.innerText="please enter valid formate"
+        }
+        if(!passwordPattern.test(userObj.password)){
+            passwordError.innerHTML="please enter valid password formate"
+        }
+        if(userObj.address==''){
+            alert("pleaser full fill input value")
+        }
+
+        
 
         let oldData = JSON.parse(localStorage.getItem("userForm")) ?? []
         let allData = [...oldData, userObj]
@@ -134,7 +160,7 @@
                     <td> ${v.email} </td>
                     <td>${v.password}</td>
                     <td>${v.address}</td>
-                    <td> <button> Delete </button> </td>
+                    <td onclick="DeleteRow(${i})" > <button> Delete </button> </td>
                 </tr>
         `
        })
@@ -143,6 +169,23 @@
 
     displayData()
 
+    // DeleteRow
+    let DeleteRow=(id)=>{
+        let localData=JSON.parse(localStorage.getItem("userForm")) ?? []
+
+        let finalData=localData.filter((v,i)=>id!=i)
+        localStorage.setItem("userForm", JSON.stringify(finalData))
+        displayData()
+    }
+
+
+    // deleteAll
+
+    let deleteAll=()=>{
+        // localStorage.removeItem("")
+        localStorage.clear()
+        displayData()
+    }
 </script>
 
 </html>
