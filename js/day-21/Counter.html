@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 3000px;
+        }
+        .counter{
+            width: 200px;
+            padding: 20px;
+            background-color: #ccc;
+            font-size: 40px;
+            margin:  auto;
+            text-align: center;
+            position: absolute;
+            top: 1000px;
+            left: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter">0</div>
+</body>
+<script>
+
+   
+    
+
+    // let myCounter=()=>{
+    //     let sum=0
+
+    //     let myTime=setInterval(()=>{
+    //         sum=sum+1
+           
+    //         counter.innerHTML=sum
+    //     },100)
+
+
+       
+    // }
+
+    // myCounter()
+
+    //////////////////////////////////////////////////////////
+
+    let windowHeight= window.innerHeight ;
+
+    let counter=document.querySelector(".counter")
+
+    window.addEventListener('scroll',()=>{
+        let boxHeight=counter.getBoundingClientRect().top
+
+        console.log(boxHeight)
+        
+    })
+
+</script>
+</html>
