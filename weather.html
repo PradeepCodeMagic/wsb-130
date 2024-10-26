@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .country{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-top: 20px;
+            background-color: yellow;
+        }
+        .box{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;  
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-info">
+        <div class="container">
+        <form id="sForm">
+            <div class="row pt-3">
+                <div class="col-12">
+                    <h2>Weather App</h2>
+                </div>
+
+                <div class="col-lg-3">
+                    <input type="text" class="form-control " name="cityName">
+                </div>
+
+                <div class="col-lg-3">
+                    <button type="submit" class="w-100 btn bg-danger">Submit</button>
+                </div>
+            </div>
+        </form>
+        </div>
+        <div class="container">
+            <div class="row pt-4" id="final">
+                
+            </div>
+            
+        </div>
+    </div>
+</body>
+<script>
+    var form=document.querySelector("#sForm");
+    var finalDiv=document.querySelector("#final");
+
+    form.addEventListener("submit",async (event)=>{
+        var imageIcon=`https://api.openweathermap.org/img/w/`
+            event.preventDefault();
+        var cityName=event.target.cityName.value;
+        
+        var apiURL=`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=4d8fb5b93d4af21d66a2948710284366&units=metric`;
+        var data=await fetch(apiURL);
+        var finalData=await data.json();
+        var {main,sys,weather}=finalData;
+        console.log(finalData)
+        
+        finalDiv.insertAdjacentHTML("afterbegin",`<div class="col-lg-3 m-2">
+                    <div class="card" >
+                        <div class="card-body">
+                            <div class="box col-12">
+                                <div><h5 class="card-title">${cityName} </h5></div>
+                                <div class="country"><h5 class="card-title ">${sys.country} </h5></div>
+                            </div>
+                          <img src="${imageIcon+weather[0].icon}.png" style="width: 60px;">
+                          <h3>${main.temp}</h3>
+                         
+                        </div>
+                    </div>
+                </div>`)
+            if(cityName!=cityName){
+               alert("please enter the correct cityname")
+            }  
+            
+        
+    })
+</script>
+</html>

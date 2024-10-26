@@ -1,0 +1,9 @@
+.item{
+    border-radius: 20px 20px 0px 20px;
+}
+
+.banner{
+    background-image: url('https://packshifts.in/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
