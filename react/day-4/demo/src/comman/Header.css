@@ -1,0 +1,12 @@
+
+
+.myHeader{
+    width: 100%;
+    background-color: red;
+    color: white;
+    display: flex;
+    list-style: none;
+}
+.myHeader li{
+    padding: 20px;
+}
