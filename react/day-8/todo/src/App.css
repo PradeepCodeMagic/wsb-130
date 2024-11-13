@@ -1,0 +1,52 @@
+.main{
+  width: 600px;
+  margin: 20px auto;
+  background-color: #ccc;
+  padding: 10px;
+  
+}
+.main h3{
+  text-align: center;
+}
+
+.row{
+  width: 100%;
+}
+.row input{
+  width: 70%;
+  padding: 10px;
+}
+.row button{
+  padding: 10px 20px ;
+  background-color: skyblue;
+  
+  font-size: 18px;
+  outline: none;
+  border: none;
+  margin-left: 30px;
+}
+
+.row2 ul{
+  padding: 0px;
+}
+.row2 ul li{
+  list-style: none;
+  background-color: aqua;
+  padding: 10px;
+  margin: 5px 0px;
+  position: relative;
+}
+.row2 ul li span{
+  position: absolute;
+  right: 10px;
+  background-color: #ccc;
+  padding: 5px;
+  top: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.activeLi{
+  background-color: orange !important;
+  text-decoration: line-through;
+}
