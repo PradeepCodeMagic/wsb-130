@@ -1,0 +1,20 @@
+.slick-prev {
+    left: 128px !important;
+}
+
+.slick-next {
+    right: 39px !important;
+}
+
+
+
+
+@media only screen and (min-width:0px) and (max-width:575px){
+    .slick-prev {
+        left: -32px !important;
+    }
+    
+    .slick-next {
+        right: 39px !important;
+    }
+}
